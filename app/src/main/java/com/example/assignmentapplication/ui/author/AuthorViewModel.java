@@ -18,6 +18,7 @@ public class AuthorViewModel extends ViewModel {
     public AuthorViewModel() {
         init();
     }
+
     private void init() {
         AuthorDataSourceFactory itemDataSourceFactory = new AuthorDataSourceFactory();
         liveDataSource = itemDataSourceFactory.authorLiveDataSource;

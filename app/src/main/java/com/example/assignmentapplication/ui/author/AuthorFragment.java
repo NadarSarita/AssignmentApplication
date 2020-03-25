@@ -19,7 +19,7 @@ import com.victor.loading.rotate.RotateLoading;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AuthorFragment extends Fragment  {
+public class AuthorFragment extends Fragment {
     RecyclerView recyclerView;
     private AuthorViewModel authorViewModel;
     @BindView(R.id.rotateLoding)
@@ -29,14 +29,15 @@ public class AuthorFragment extends Fragment  {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_author, container, false);
-        ButterKnife.bind(this,root);
+        ButterKnife.bind(this, root);
 
         recyclerView = root.findViewById(R.id.recyclerView);
         rotateLoading.start();
         final AuthorResponseAdapter adapter = new AuthorResponseAdapter();
         AuthorViewModel itemViewModel = ViewModelProviders.of(this).get(AuthorViewModel.class);
         itemViewModel.authorPagedList.observe(this, new Observer<PagedList<AuthorResponse>>() {
-            @Override public void onChanged(PagedList<AuthorResponse> users) {
+            @Override
+            public void onChanged(PagedList<AuthorResponse> users) {
                 adapter.submitList(users);
             }
         });

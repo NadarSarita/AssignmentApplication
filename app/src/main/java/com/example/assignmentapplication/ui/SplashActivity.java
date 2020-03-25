@@ -21,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
     ImageView img;
     @BindView(R.id.txt)
     TextView txt;
-    private static int timeOut=3000;
+    private static int timeOut = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +29,17 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
 
-        Animation animation= AnimationUtils.loadAnimation(this,R.anim.splash_anim);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.splash_anim);
         img.startAnimation(animation);
         txt.startAnimation(animation);
 
-        Handler handler=new Handler();
+        Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 finish();
             }
-        },timeOut);
+        }, timeOut);
     }
 }

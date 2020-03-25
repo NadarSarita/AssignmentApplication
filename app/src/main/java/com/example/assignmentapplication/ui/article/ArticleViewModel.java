@@ -17,6 +17,7 @@ public class ArticleViewModel extends ViewModel {
     public ArticleViewModel() {
         init();
     }
+
     private void init() {
         ArticleDataSourceFactory itemDataSourceFactory = new ArticleDataSourceFactory();
         liveDataSource = itemDataSourceFactory.articleLiveDataSource;

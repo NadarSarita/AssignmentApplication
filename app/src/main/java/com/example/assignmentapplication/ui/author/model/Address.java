@@ -21,21 +21,10 @@ public class Address {
     @Expose
     private Geo geo;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
     public Address() {
     }
 
-    /**
-     *
-     * @param zipcode
-     * @param geo
-     * @param suite
-     * @param city
-     * @param street
-     */
+
     public Address(String street, String suite, String city, String zipcode, Geo geo) {
         super();
         this.street = street;

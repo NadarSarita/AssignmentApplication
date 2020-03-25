@@ -19,6 +19,7 @@ public class ApiServiceBuilder {
             .client(okHttp.build());
     // Create Retrofit Instance
     private static Retrofit retrofit = builder.build();
+
     public static <T> T buildService(Class<T> type) {
         return retrofit.create(type);
     }

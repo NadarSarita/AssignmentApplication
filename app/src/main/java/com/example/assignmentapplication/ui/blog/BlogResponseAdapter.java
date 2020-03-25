@@ -18,6 +18,7 @@ public class BlogResponseAdapter extends PagedListAdapter<BlogResponse, BlogResp
     public BlogResponseAdapter() {
         super(USER_COMPARATOR);
     }
+
     @NonNull
     @Override
     public BlogResponseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -25,18 +26,22 @@ public class BlogResponseAdapter extends PagedListAdapter<BlogResponse, BlogResp
                 .inflate(R.layout.blog_list_item, parent, false);
         return new BlogResponseViewHolder(view);
     }
+
     @Override
     public void onBindViewHolder(@NonNull BlogResponseViewHolder holder, int position) {
         holder.bind(getItem(position));
     }
+
     public class BlogResponseViewHolder extends RecyclerView.ViewHolder {
         private TextView blogTitle;
         private TextView blogBody;
+
         BlogResponseViewHolder(@NonNull View itemView) {
             super(itemView);
             blogTitle = itemView.findViewById(R.id.blog_title);
             blogBody = itemView.findViewById(R.id.blog_body);
         }
+
         void bind(BlogResponse blog) {
             if (blog.getName() != null) {
                 blogTitle.setText(blog.getName());
@@ -46,12 +51,16 @@ public class BlogResponseAdapter extends PagedListAdapter<BlogResponse, BlogResp
             }
         }
     }
+
     private static final DiffUtil.ItemCallback<BlogResponse> USER_COMPARATOR = new DiffUtil.ItemCallback<BlogResponse>() {
-        @Override public boolean areItemsTheSame(@NonNull BlogResponse oldItem, @NonNull BlogResponse newItem) {
+        @Override
+        public boolean areItemsTheSame(@NonNull BlogResponse oldItem, @NonNull BlogResponse newItem) {
             return oldItem.getId() == newItem.getId();
         }
+
         @SuppressLint("DiffUtilEquals")
-        @Override public boolean areContentsTheSame(@NonNull BlogResponse oldItem, @NonNull BlogResponse newItem) {
+        @Override
+        public boolean areContentsTheSame(@NonNull BlogResponse oldItem, @NonNull BlogResponse newItem) {
             return oldItem == newItem;
         }
     };

@@ -12,18 +12,9 @@ public class Geo {
     @Expose
     private String lng;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
     public Geo() {
     }
 
-    /**
-     *
-     * @param lng
-     * @param lat
-     */
     public Geo(String lat, String lng) {
         super();
         this.lat = lat;

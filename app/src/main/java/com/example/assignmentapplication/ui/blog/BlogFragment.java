@@ -34,16 +34,17 @@ public class BlogFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_blog, container, false);
-        ButterKnife.bind(this,root);
+        ButterKnife.bind(this, root);
         recyclerView = root.findViewById(R.id.recyclerView);
         rotateLoading.start();
         final BlogResponseAdapter adapter = new BlogResponseAdapter();
         BlogViewModel itemViewModel = ViewModelProviders.of(this).get(BlogViewModel.class);
         itemViewModel.blogPagedList.observe(this, new Observer<PagedList<BlogResponse>>() {
-            @Override public void onChanged(PagedList<BlogResponse> users) {
-                    recyclerView.setVisibility(View.VISIBLE);
-                    txtNoData.setVisibility(View.GONE);
-                    adapter.submitList(users);
+            @Override
+            public void onChanged(PagedList<BlogResponse> users) {
+                recyclerView.setVisibility(View.VISIBLE);
+                txtNoData.setVisibility(View.GONE);
+                adapter.submitList(users);
             }
         });
         recyclerView.setAdapter(adapter);

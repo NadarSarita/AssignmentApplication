@@ -16,19 +16,18 @@ import retrofit2.Response;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
-public class ArticleDataSource extends ItemKeyedDataSource<Integer,ArticleResponse>
-{
+public class ArticleDataSource extends ItemKeyedDataSource<Integer, ArticleResponse> {
 
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull LoadInitialCallback<ArticleResponse> callback) {
         ApiService service = ApiServiceBuilder.buildService(ApiService.class);
-        Call<List<ArticleResponse>> call = service.getArticles(0,params.requestedLoadSize);
+        Call<List<ArticleResponse>> call = service.getArticles(0, params.requestedLoadSize);
         call.enqueue(new Callback<List<ArticleResponse>>() {
             @Override
             public void onResponse(Call<List<ArticleResponse>> call, Response<List<ArticleResponse>> response) {
-               List<ArticleResponse> apiResponse = response.body();
-                Log.d(TAG, "onResponse: "+apiResponse.size());
-                callback.onResult(apiResponse,0,apiResponse.size());
+                List<ArticleResponse> apiResponse = response.body();
+                Log.d(TAG, "onResponse: " + apiResponse.size());
+                callback.onResult(apiResponse, 0, apiResponse.size());
             }
 
             @Override
@@ -41,12 +40,12 @@ public class ArticleDataSource extends ItemKeyedDataSource<Integer,ArticleRespon
     @Override
     public void loadAfter(@NonNull LoadParams<Integer> params, @NonNull LoadCallback<ArticleResponse> callback) {
         ApiService service = ApiServiceBuilder.buildService(ApiService.class);
-        Call<List<ArticleResponse>> call = service.getArticles(params.key,params.key+params.requestedLoadSize);
+        Call<List<ArticleResponse>> call = service.getArticles(params.key, params.key + params.requestedLoadSize);
         call.enqueue(new Callback<List<ArticleResponse>>() {
             @Override
             public void onResponse(Call<List<ArticleResponse>> call, Response<List<ArticleResponse>> response) {
                 List<ArticleResponse> apiResponse = response.body();
-                Log.d(TAG, "onResponse: "+apiResponse.size());
+                Log.d(TAG, "onResponse: " + apiResponse.size());
                 callback.onResult(apiResponse);
             }
 

@@ -20,20 +20,9 @@ public class ArticleResponse {
     @Expose
     private String body;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
     public ArticleResponse() {
     }
 
-    /**
-     *
-     * @param id
-     * @param title
-     * @param body
-     * @param userId
-     */
     public ArticleResponse(Integer userId, Integer id, String title, String body) {
         super();
         this.userId = userId;

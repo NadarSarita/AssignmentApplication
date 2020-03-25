@@ -1,7 +1,7 @@
 package com.example.assignmentapplication.ui.author.model;
 
-        import com.google.gson.annotations.Expose;
-        import com.google.gson.annotations.SerializedName;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class AuthorResponse {
 
@@ -30,24 +30,10 @@ public class AuthorResponse {
     @Expose
     private Company company;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
     public AuthorResponse() {
     }
 
-    /**
-     *
-     * @param website
-     * @param address
-     * @param phone
-     * @param name
-     * @param company
-     * @param id
-     * @param email
-     * @param username
-     */
+
     public AuthorResponse(Integer id, String name, String username, String email, Address address, String phone, String website, Company company) {
         super();
         this.id = id;

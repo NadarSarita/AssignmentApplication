@@ -15,19 +15,10 @@ public class Company {
     @Expose
     private String bs;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
     public Company() {
     }
 
-    /**
-     *
-     * @param bs
-     * @param catchPhrase
-     * @param name
-     */
+
     public Company(String name, String catchPhrase, String bs) {
         super();
         this.name = name;

@@ -1,8 +1,8 @@
 package com.example.assignmentapplication.ui.author.model;
 
 
-        import com.google.gson.annotations.Expose;
-        import com.google.gson.annotations.SerializedName;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Author_Article_Response {
 
@@ -19,20 +19,9 @@ public class Author_Article_Response {
     @Expose
     private String body;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
     public Author_Article_Response() {
     }
 
-    /**
-     *
-     * @param id
-     * @param title
-     * @param body
-     * @param userId
-     */
     public Author_Article_Response(Integer userId, Integer id, String title, String body) {
         super();
         this.userId = userId;

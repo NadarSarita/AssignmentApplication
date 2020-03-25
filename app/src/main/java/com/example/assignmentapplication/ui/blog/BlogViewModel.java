@@ -17,6 +17,7 @@ public class BlogViewModel extends ViewModel {
     public BlogViewModel() {
         init();
     }
+
     private void init() {
         BlogDataSourceFactory itemDataSourceFactory = new BlogDataSourceFactory();
         liveDataSource = itemDataSourceFactory.blogLiveDataSource;

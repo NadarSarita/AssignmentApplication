@@ -11,10 +11,6 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.example.assignmentapplication.R;
 import com.example.assignmentapplication.ui.article.ArticleFragment;
 
-/**
- * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the sections/tabs/pages.
- */
 public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
 
     @StringRes
@@ -28,8 +24,7 @@ public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
+
         return new ArticleFragment();
     }
 
@@ -41,7 +36,6 @@ public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 2 total pages.
         return TAB_TITLES.length;
     }
 }

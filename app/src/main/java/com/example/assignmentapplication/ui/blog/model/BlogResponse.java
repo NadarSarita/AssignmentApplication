@@ -21,21 +21,10 @@ public class BlogResponse {
     @Expose
     private String body;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
     public BlogResponse() {
     }
 
-    /**
-     *
-     * @param name
-     * @param postId
-     * @param id
-     * @param body
-     * @param email
-     */
+
     public BlogResponse(Integer postId, Integer id, String name, String email, String body) {
         super();
         this.postId = postId;

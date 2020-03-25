@@ -74,10 +74,10 @@
             android:id="@+id/txtAuthorPhone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:drawableLeft="@drawable/ic_phone"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:drawableLeft="@drawable/ic_phone"
+            android:text="TextView"
             bind:layout_constraintEnd_toEndOf="parent"
             bind:layout_constraintStart_toStartOf="parent"
             bind:layout_constraintTop_toBottomOf="@+id/txtAuthorName" />

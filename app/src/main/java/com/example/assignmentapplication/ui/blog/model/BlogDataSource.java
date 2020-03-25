@@ -16,19 +16,18 @@ import retrofit2.Response;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
-public class BlogDataSource extends ItemKeyedDataSource<Integer, BlogResponse>
-{
+public class BlogDataSource extends ItemKeyedDataSource<Integer, BlogResponse> {
 
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull LoadInitialCallback<BlogResponse> callback) {
         ApiService service = ApiServiceBuilder.buildService(ApiService.class);
-        Call<List<BlogResponse>> call = service.getBlogs(0,params.requestedLoadSize);
+        Call<List<BlogResponse>> call = service.getBlogs(0, params.requestedLoadSize);
         call.enqueue(new Callback<List<BlogResponse>>() {
             @Override
             public void onResponse(Call<List<BlogResponse>> call, Response<List<BlogResponse>> response) {
-               List<BlogResponse> apiResponse = response.body();
-                Log.d(TAG, "onResponse: "+apiResponse.size());
-                callback.onResult(apiResponse,0,apiResponse.size());
+                List<BlogResponse> apiResponse = response.body();
+                Log.d(TAG, "onResponse: " + apiResponse.size());
+                callback.onResult(apiResponse, 0, apiResponse.size());
             }
 
             @Override
@@ -41,12 +40,12 @@ public class BlogDataSource extends ItemKeyedDataSource<Integer, BlogResponse>
     @Override
     public void loadAfter(@NonNull LoadParams<Integer> params, @NonNull LoadCallback<BlogResponse> callback) {
         ApiService service = ApiServiceBuilder.buildService(ApiService.class);
-        Call<List<BlogResponse>> call = service.getBlogs(params.key,params.key+params.requestedLoadSize);
+        Call<List<BlogResponse>> call = service.getBlogs(params.key, params.key + params.requestedLoadSize);
         call.enqueue(new Callback<List<BlogResponse>>() {
             @Override
             public void onResponse(Call<List<BlogResponse>> call, Response<List<BlogResponse>> response) {
                 List<BlogResponse> apiResponse = response.body();
-                Log.d(TAG, "onResponse: "+apiResponse.size());
+                Log.d(TAG, "onResponse: " + apiResponse.size());
                 callback.onResult(apiResponse);
             }
 
