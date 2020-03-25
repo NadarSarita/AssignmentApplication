@@ -15,10 +15,10 @@ import retrofit2.http.Query;
 
 public interface ApiService {
     @GET("users")
-    Call<List<AuthorResponse>> getAuthors(@Query("_start") Integer start,@Query("_limit") Integer limit);
+    Call<List<AuthorResponse>> getAuthors(@Query("_start") Integer start, @Query("_limit") Integer limit);
 
     @GET("posts")
-    Call<List<ArticleResponse>> getArticles(@Query("_start") Integer start,@Query("_limit") Integer limit);
+    Call<List<ArticleResponse>> getArticles(@Query("_start") Integer start, @Query("_limit") Integer limit);
 
     @GET("comments")
     Call<List<BlogResponse>> getBlogs(@Query("_start") Integer start, @Query("_limit") Integer limit);

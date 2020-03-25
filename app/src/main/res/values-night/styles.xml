@@ -19,6 +19,7 @@
         <item name="android:textColor">@color/primaryTitleColorNight</item>
     </style>
 
+
     <style name="CardViewTheme" parent="CardView">
         <item name="android:textColor">@color/primaryTitleColorNight</item>
         <item name="cardBackgroundColor">@color/cardViewNight</item>
