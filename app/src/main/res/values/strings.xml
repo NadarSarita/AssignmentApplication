@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ArticleApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_blog">Blog</string>
+    <string name="title_article">Article</string>
+    <string name="title_author">Author</string>
+    <string name="featured">Featured</string>
+    <string name="latest">Latest</string>
+
+    <string-array name="titles">
+        <item>Featured</item>
+        <item>Latest</item>
+    </string-array>
+</resources>

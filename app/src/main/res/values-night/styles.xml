@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryNight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkNight</item>
+        <item name="colorAccent">@color/colorAccentNight</item>
+    </style>
+
+    <style name="NoActionBarTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryNight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkNight</item>
+        <item name="colorAccent">@color/colorAccentNight</item>
+        <item name="android:drawableTint">@color/primaryTitleColorNight</item>
+
+        <item name="android:windowBackground">@color/colorPrimaryNight</item>
+        <item name="android:textColor">@color/primaryTitleColorNight</item>
+    </style>
+
+    <style name="CardViewTheme" parent="CardView">
+        <item name="android:textColor">@color/primaryTitleColorNight</item>
+        <item name="cardBackgroundColor">@color/cardViewNight</item>
+    </style>
+
+    <style name="BottomNav" parent="Widget.Design.BottomNavigationView">
+        <item name="itemIconTint">@color/primaryTitleColorNight</item>
+    </style>
+
+</resources>
